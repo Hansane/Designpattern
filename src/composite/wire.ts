@@ -5,21 +5,15 @@ export class Wire implements IMobile {
     private lengthFirst: number;
     private lengthSecond: number;
 
-    constructor(private first: IMobile, private second: IMobile, length: number) {
-        this.lengthFirst = 0;
-        this.lengthSecond = length;
+    constructor(private first: IMobile, private second: IMobile, private totalLength: number) {
     }
 
     balance(): void {
        this.first.balance();
        this.second.balance();
 
-       let weight1 = this.first.weight;
-       let weight2 = this.second.weight;
-
-       let length = this.lengthFirst + this.lengthSecond;
-       this.lengthFirst = weight2 * length / (weight1 + weight2);
-       this.lengthSecond = length - this.lengthFirst;
+       this.lengthFirst = this.second.weight * this.totalLength / (this.first.weight + this.second.weight);
+       this.lengthSecond = this.totalLength - this.lengthFirst;
     }
 
     get weight(): number {
