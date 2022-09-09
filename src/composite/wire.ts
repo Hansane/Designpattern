@@ -2,8 +2,8 @@ import {IMobile} from "./interfaces/mobile";
 
 export class Wire implements IMobile {
 
-    private lengthFirst: number;
-    private lengthSecond: number;
+    private lengthFirst: number = 0;
+    private lengthSecond: number = 0;
 
     constructor(private first: IMobile, private second: IMobile, private totalLength: number) {
     }
