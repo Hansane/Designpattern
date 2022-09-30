@@ -13,8 +13,7 @@ export class TemperatureSensor {
         this.observable.publish(value);
     }
 
-    subscribe(func: (value: number) => void) {
-        this.observable.subscribe(func);
+    subscribe(func: (value: number) => void, id: number) {
+        this.observable.subscribe(func, id);
     }
-
 }
