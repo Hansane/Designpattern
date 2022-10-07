@@ -16,4 +16,8 @@ export class TemperatureSensor {
     subscribe(func: (value: number) => void, id: number) {
         this.observable.subscribe(func, id);
     }
+
+    unsubscribe(id: number) {
+        this.observable.unsubscribe(id)
+    }
 }

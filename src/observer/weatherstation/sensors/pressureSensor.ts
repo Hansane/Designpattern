@@ -17,4 +17,7 @@ export class PressureSensor {
         this.observable.subscribe(func, id);
     }
 
+    unsubscribe(id: number) {
+        this.observable.unsubscribe(id)
+    }
 }
