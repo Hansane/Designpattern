@@ -1,3 +1,5 @@
 export interface ISortingStrategy {
-    sort(numbers: number[]): number[];
+	get sortName();
+
+	sort(numbers: number[]): number[];
 }

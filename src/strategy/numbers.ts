@@ -1,17 +1,17 @@
-import {ISortingStrategy} from "./sortingStrategy";
+import { ISortingStrategy } from "./sortingStrategy";
 
 export class Numbers {
 
-    private sortingStrategy: ISortingStrategy;
+	private sortingStrategy: ISortingStrategy;
 
-    constructor(public numbers: number[]) {
-    }
+	constructor(public numbers: number[]) {
+	}
 
-    public setStrategy(strategy: ISortingStrategy) {
-        this.sortingStrategy = strategy;
-    }
+	public setStrategy(strategy: ISortingStrategy) {
+		this.sortingStrategy = strategy;
+	}
 
-    public sort(): number[] {
-        return this.numbers = this.sortingStrategy?.sort(this.numbers) ?? this.numbers;
-    }
+	public sort(): number[] {
+		return this.sortingStrategy?.sort([...this.numbers]) ?? this.numbers;
+	}
 }
