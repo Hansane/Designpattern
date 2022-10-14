@@ -11,15 +11,15 @@ export class QuickSort implements ISortingStrategy {
 
 	private quicksort(numbers: number[], left: number, right: number) {
 		if (left < right) {
-			let teiler = this.teile(numbers, left, right);
-			this.quicksort(numbers, left, teiler - 1);
-			this.quicksort(numbers, teiler + 1, right);
+			let splitter = this.split(numbers, left, right);
+			this.quicksort(numbers, left, splitter - 1);
+			this.quicksort(numbers, splitter + 1, right);
 		}
 
 		return numbers;
 	}
 
-	private teile(numbers: number[], left: number, right: number) {
+	private split(numbers: number[], left: number, right: number) {
 		let i = left;
 		let j = right - 1;
 		let pivot = numbers[right];
