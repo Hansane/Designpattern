@@ -16,7 +16,6 @@ export class InsertionSort implements ISortingStrategy {
             let inserted = false;
             for(let j = 0; j < result.length; j++) {
                 if(numbers[i] < result[j]) {
-                    console.log(result);
                     result.splice(j, 0, numbers[i]);
                     inserted = true;
                     break;
