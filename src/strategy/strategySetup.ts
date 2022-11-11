@@ -7,7 +7,14 @@ import { SelectionSort } from "./strategies/selectionSort";
 
 export class StrategySetup {
 	constructor() {
-		let numbers = new Numbers([1, 4, 5, 7, 89, 2, 96, 2, 3, 9, 3, 444, 69]);
+
+		let numArr = []
+
+		for(let i = 0; i < 6466; i++) {
+			numArr.push(i);
+		}
+
+		let numbers = new Numbers(numArr);
 		let strategies: ISortingStrategy[] = [
 			new BubbleSort(),
 			new InsertionSort(),
@@ -17,7 +24,9 @@ export class StrategySetup {
 
 		for (const strategy of strategies) {
 			numbers.setStrategy(strategy);
-			console.log(`[${strategy.sortName}] Sorted number: ${numbers.sort()}`);
+			let time = performance.now()
+			numbers.sort();
+			console.log(`[${strategy.sortName}] Time needed: ${performance.now() - time}ms`);
 		}
 	}
 }
